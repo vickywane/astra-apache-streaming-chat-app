@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Home</title>
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <nav class="shadow-lg w-full">
+          <span class="w-full">
+            <div class="flex items-center h-20 w-full">
+              <div class="flex items-center items mx-20 justify-center w-full">
+                <span class="flex items-center justify-center gap-4">
+                  <h1 class="font-bold cursor-pointer text-xl">
+                    Doe School Party
+                  </h1>
+                </span>
+              </div>
+            </div>
+          </span>
+        </nav>
+      </header>
+
+      <div class="mt-12 max-w-xl m-auto m-0">
+        <form>
+          <h1 class="text-2xl text-center">Join The Conversation Today</h1>
+          <br />
+          <hr />
+
+          <div class="mb-6">
+            <label
+              for="usename"
+              class="block mb-2 text-sm font-medium text-gray-900 mt-4"
+              >Enter Your Username</label
+            >
+            <input
+              type="text"
+              id="username"
+              class="border border-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              placeholder="John Doe"
+              required
+            />
+          </div>
+
+          <div class="flex items-start mb-6">
+            <div class="flex items-center h-5">
+              <input
+                id="remember"
+                type="checkbox"
+                value=""
+                class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
+                required
+              />
+            </div>
+            <label for="remember" class="ml-2 text-sm font-medium">
+              I agree to the
+              <a
+                href="#"
+                class="text-blue-600 hover:underline dark:text-blue-500"
+              >
+                moral conducts and regulations
+              </a>
+              of the chatroom.
+            </label>
+          </div>
+
+          <div class="flex justify-center">
+            <button
+              type="submit"
+              id="join-chat-btn"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Take me to the chatroom!
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script>
+      const usernameInput = document.getElementById("username");
+      const joinBtn = document.getElementById("join-chat-btn");
+
+      joinBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        window.location.href = `/chat.html?username=${usernameInput.value}`;
+      });
+    </script>
+  </body>
+</html>
